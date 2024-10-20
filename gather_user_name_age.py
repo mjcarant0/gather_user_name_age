@@ -1,9 +1,9 @@
 #Use dictionary to store the user's data
 user_data = {}
 #Use loop to ask user to input their name and age
-while True:
+while True: #firs loop
     #Another loop if there is an error or if the user wants to retry
-    while True:
+    while True: #second loop
         try:
             name = input("What's your name? ")
             age = int(input("How old are you? "))
@@ -15,9 +15,11 @@ while True:
             
             #Print user's information
             print("--------------------------")
-            print(f"{user_data[name]['name']}'s personal information")
+            print(f"This is your personal information")
             print(f"Name: {user_data[name]['name']}")
             print(f"Age: {user_data[name]['age']}")
-            break
+            
+            retry = input("Do you want to retry? Please enter YES or NO ").upper()
+            break #to break the second loop
         except:
-            print("try again")
+            print("Please try again")
