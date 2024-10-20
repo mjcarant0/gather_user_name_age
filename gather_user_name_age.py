@@ -13,6 +13,7 @@ while True: #first loop
                 #to break third loop
                 elif name.isalpha():
                     break
+                
             age = int(input("How old are you? "))
             
             user_data[name] = {
@@ -32,7 +33,14 @@ while True: #first loop
             print("Please try again")
             
     if retry == "NO":
-        print("Your information has been stored. Thank you!")
-        break
+        #Adding conditional statement if the user want to input another data/information
+        new_user_data = input("Do you want to add a new entry? Please enter YES or NO: ").upper()
+        if new_user_data == "YES":
+            continue
+        elif new_user_data == "NO":
+            print("Your information has been stored. Thank you!")
+            break
+        else:
+            print("Invalid. Please enter YES or NO: ")
     elif retry != "YES":
         print("Invalid")
