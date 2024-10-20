@@ -7,4 +7,17 @@ while True:
         try:
             name = input("What's your name? ")
             age = int(input("How old are you? "))
-#Print user's information
+            
+            user_data = {
+                "name" : name,
+                "age" : age
+            }
+            
+            #Print user's information
+            print("--------------------------")
+            print(f"{user_data[name]['name']}'s personal information")
+            print(f"Name: {user_data[name]['name']}")
+            print(f"Age: {user_data[name]['age']}")
+            break
+        except:
+            print("try again")
