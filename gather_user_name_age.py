@@ -23,3 +23,9 @@ while True: #firs loop
             break #to break the second loop
         except:
             print("Please try again")
+            
+    if retry == "NO":
+        print("Your information has been stored. Thank you!")
+        break
+    elif retry != "YES":
+        print("Invalid")
