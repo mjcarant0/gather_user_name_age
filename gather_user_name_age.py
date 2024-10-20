@@ -14,7 +14,13 @@ while True: #first loop
                 elif name.isalpha():
                     break
                 
-            age = int(input("How old are you? "))
+            while True:
+                age = int(input("How old are you? "))
+                
+                if age < 0:
+                    print("Age must be positive number. Please try again.")
+                else:
+                    break
             
             user_data[name] = {
                 "name" : name,
@@ -33,7 +39,7 @@ while True: #first loop
             print("Please try again")
             
     if retry == "NO":
-        #Adding conditional statement if the user want to input another data/information
+        #Adding conditional statement if the user wants to input another data/information
         new_user_data = input("Do you want to add a new entry? Please enter YES or NO: ").upper()
         if new_user_data == "YES":
             continue
