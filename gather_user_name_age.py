@@ -5,7 +5,14 @@ while True: #first loop
     #Another loop if there is an error or if the user wants to retry
     while True: #second loop
         try:
-            name = input("What's your name? ")
+            while True: #third loop for name to ensure that all characters are letters
+                name = input("What's your name? ")
+                
+                if not name.isalpha():
+                    print("Only letters are allowed. Please try again.")
+                #to break third loop
+                elif name.isalpha():
+                    break
             age = int(input("How old are you? "))
             
             user_data[name] = {
@@ -19,7 +26,7 @@ while True: #first loop
             print(f"Name: {user_data[name]['name']}")
             print(f"Age: {user_data[name]['age']}")
             
-            retry = input("Do you want to retry? Please enter YES or NO ").upper()
+            retry = input("Do you want to retry? Please enter YES or NO: ").upper()
             break #to break the second loop
         except:
             print("Please try again")
