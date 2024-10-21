@@ -50,3 +50,10 @@ while True: #first loop
             print("Invalid. Please enter YES or NO: ")
     elif retry != "YES":
         print("Invalid")
+
+#Print all the stored data in user_data
+stored_data = user_data.values()
+
+print("----------------------------------")
+print("       All stored user data       ")
+print(stored_data)
