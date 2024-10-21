@@ -1,3 +1,5 @@
+import re #to allow letters, spaces, hyphens, and apostrophes to user's name.
+
 #Use dictionary to store the user's data
 user_data = {}
 #Use loop to ask user to input their name and age
@@ -8,10 +10,12 @@ while True: #first loop
             while True: #third loop for name to ensure that all characters are letters
                 name = input("What's your name? ")
                 
-                if not name.isalpha():
-                    print("Only letters are allowed. Please try again.")
+                if not re.match(r"^[A-Za-z\s'-]+$", name):
+                    print("Invalid name. Please try again.")
+                elif name in user_data:
+                    print("This name is already taken. Please enter different name.")
                 #to break third loop
-                elif name.isalpha():
+                else:
                     break
                 
             while True:
