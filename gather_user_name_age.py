@@ -57,3 +57,10 @@ stored_data = user_data.values()
 print("----------------------------------")
 print("       All stored user data       ")
 print(stored_data)
+
+#Compare all the ages and compare it to find the oldest and youngest
+oldest_user = max(user_data)
+youngest_user = min(user_data)
+
+print(f"The oldest user is: {oldest_user}")
+print(f"The youngest user is: {youngest_user}")
