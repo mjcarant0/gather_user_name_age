@@ -52,15 +52,9 @@ while True: #first loop
         print("Invalid")
 
 #Print all the stored data in user_data
-stored_data = user_data.values()
-
 print("----------------------------------")
 print("       All stored user data       ")
-print(stored_data)
+for name, data in user_data.items():
+    print(f"Name: {data['name']}, Age: {data['age']}")
 
 #Compare all the ages and compare it to find the oldest and youngest
-oldest_user = max(user_data)
-youngest_user = min(user_data)
-
-print(f"The oldest user is: {oldest_user}")
-print(f"The youngest user is: {youngest_user}")
