@@ -12,19 +12,31 @@ while True: #first loop
                 
                 if not re.match(r"^[A-Za-z\s'-]+$", name):
                     print("Invalid name. Please try again.")
-                elif name in user_data:
-                    print("This name is already taken. Please enter different name.")
+                elif name in user_data: #if the name is already taken
+                    update = input("This name is already taken. Do you want to update your name? YES or NO. ").upper() #if they want to change the name
+                    if update == "YES":
+                        age = int(input("How old are you? "))
+                        if age < 0:
+                            print("Age must be positive number. Please try again.")
+                            continue
+                        user_data[name]['age'] = age
+                        print("Your information has been updated.")
+                        break
+                    else:
+                        print("Keeping the existing entry.")
+                        break
                 #to break third loop
                 else:
                     break
-                
-            while True:
-                age = int(input("How old are you? "))
-                
-                if age < 0:
-                    print("Age must be positive number. Please try again.")
-                else:
-                    break
+            
+            if name not in user_data: #for new name
+                while True:
+                    age = int(input("How old are you? "))
+                    
+                    if age < 0:
+                        print("Age must be positive number. Please try again.")
+                    else:
+                        break
             
             user_data[name] = {
                 "name" : name,
