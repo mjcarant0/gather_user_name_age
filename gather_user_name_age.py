@@ -64,6 +64,8 @@ while True: #first loop
             break
         else:
             print("Invalid. Please enter YES or NO: ")
+    elif retry == "YES":
+        del user_data[name]
     elif retry != "YES":
         print("Invalid")
 
